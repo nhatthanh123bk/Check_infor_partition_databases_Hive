@@ -20,7 +20,6 @@ done < "$list_tables"
 rm -rf $output
 string="#"
 count=0
-count_continue=0
 while read line 
 do
 	if [[ $count -eq 0 ]]; then
@@ -42,7 +41,7 @@ done < "$list_partitions"
 # show name and type list column is partitioned
 list_column_paritions=./list_column_partitions.txt
 string="#"
-rm -rf $list_column_partitions.txt
+rm -rf $list_column_partitions
 while read line 
 do
 	if [[ "$line" == *$string* ]]; then
