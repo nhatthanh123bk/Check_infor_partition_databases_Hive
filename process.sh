@@ -2,6 +2,7 @@
 list_tables=./show_num_parition/tables.txt
 list_partitions=./show_num_parition/list_column_partition.txt
 output=./statistics_partitions.txt 
+name_database=$1
 
 # dump list tables into tables.txt
 hive --showHeader=false --outputformat=tsv2 -f ./show_num_parition/command.sql > $list_tables
@@ -11,7 +12,7 @@ rm -rf $list_partitions
 while read line
 do
 	echo "$line" >> $list_partitions
-	eval "hive --showHeader=false --outputformat=tsv2 -e 'desc movie_len.$line'  | awk '/Partition/ {p=1}; p; /Detailed/ {p=0}'" >> $list_partitions
+	eval "hive --showHeader=false --outputformat=tsv2 -e 'desc $name_database.$line'  | awk '/Partition/ {p=1}; p; /Detailed/ {p=0}'" >> $list_partitions
 	echo "----" >> $list_partitions
 done < "$list_tables"
 
