@@ -1,0 +1,3 @@
+inmediate_movies, 0 column is partition.
+movies, 1 column is partition.
+ratings, 1 column is partition.

@@ -1,0 +1,12 @@
+inmediate_movies
+----
+movies
+# Partition Information	NULL	NULL
+# col_name	data_type	comment
+genres	string	
+----
+ratings
+# Partition Information	NULL	NULL
+# col_name	data_type	comment
+rating	float	
+----

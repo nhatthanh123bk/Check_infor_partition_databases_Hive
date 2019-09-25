@@ -1,0 +1,16 @@
+inmediate_movies
+----
+movies
+genres string
+----
+ratings
+rating float
+----
+inmediate_movies
+----
+movies
+genres string
+----
+ratings
+rating float
+----
